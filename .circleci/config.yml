@@ -31,7 +31,7 @@ jobs:
       - checkout
       - parallelism: 2
       - run:
-          name: "Testing"
+          name: "Testing2"
           command: chmod +x ./tests/test*.sh && ./tests/test1.sh && ./tests/test2.sh
   deploying:
     docker:
