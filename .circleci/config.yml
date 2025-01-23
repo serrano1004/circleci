@@ -26,10 +26,10 @@ jobs:
       # Specify the version you desire here
       # See: https://circleci.com/developer/images/image/cimg/base
       - image: cimg/base:current
+    parallelism: 2
     steps:
       # Testing cosas
       - checkout
-      - parallelism: 2
       - run:
           name: "Testing2"
           command: chmod +x ./tests/test*.sh && ./tests/test1.sh && ./tests/test2.sh
