@@ -31,7 +31,7 @@ jobs:
       - checkout
       - run:
           name: "Testing"
-          command: chmod +x test.sh && ./tests/test1.sh
+          command: chmod +x test1.sh && ./tests/test1.sh
   deploying:
     docker:
       # Specify the version you desire here
