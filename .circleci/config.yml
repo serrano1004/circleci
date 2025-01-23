@@ -21,7 +21,28 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-
+  testing:
+    docker:
+      # Specify the version you desire here
+      # See: https://circleci.com/developer/images/image/cimg/base
+      - image: cimg/base:current
+    steps:
+      # Testing cosas
+      - checkout
+      - run:
+          name: "Testing"
+          command: ./tests/test1.sh
+  deploying:
+    docker:
+      # Specify the version you desire here
+      # See: https://circleci.com/developer/images/image/cimg/base
+      - image: cimg/base:current
+    steps:
+      # Deploying cosas
+      - checkout
+      - run:
+          name: "Deploying"
+          command: "echo Deployando!"
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 workflows:
@@ -29,3 +50,6 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - say-hello
+      - testing
+      - deploying
+
