@@ -29,9 +29,10 @@ jobs:
     steps:
       # Testing cosas
       - checkout
+      - parallelism: 2
       - run:
           name: "Testing"
-          command: chmod +x ./tests/test1.sh && ./tests/test1.sh
+          command: chmod +x ./tests/test*.sh && ./tests/test1.sh && ./tests/test2.sh
   deploying:
     docker:
       # Specify the version you desire here
